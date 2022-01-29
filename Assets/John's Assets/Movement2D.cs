@@ -21,6 +21,8 @@ public class Movement2D : MonoBehaviour
     public SpriteRenderer sprite;
     public SpriteRenderer swordSprite;
 
+    public GameObject swordRotato;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -63,7 +65,34 @@ public class Movement2D : MonoBehaviour
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
         }
+        if (Input.GetMouseButtonDown(0))
+        {
+            StartCoroutine(swordSwing(1, 5));
+        }
 
 
     }
+    IEnumerator swordSwing(float aValue, float aTime)
+    {
+        swordRotato.transform.Rotate(0, 0, 90);
+        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+        {
+            swordRotato.transform.Rotate(0, 0, -10);
+            print("anything it doesnt matter");
+            if (swordRotato.transform.rotation.z >= -90)
+            {
+                swordRotato.transform.Rotate(0, 0, -90);
+                print("anything it doesnt matter");
+                break;
+            }
+            yield return null;
+        }
+       
+
+        
+       // return null;
+    }
+
+
+
 }
