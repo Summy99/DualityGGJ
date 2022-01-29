@@ -8,6 +8,8 @@ TagManager:
   - moveRadius
   - enemy
   - Sun
+  - cube
+  - shelf
   layers:
   - Default
   - TransparentFX

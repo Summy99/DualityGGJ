@@ -133,7 +133,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if(!gc.twod)
                 RotateView();
 
-            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump)
+            if (CrossPlatformInputManager.GetButtonDown("Jump") && !m_Jump && !gc.twod)
             {
                 m_Jump = true;
             }

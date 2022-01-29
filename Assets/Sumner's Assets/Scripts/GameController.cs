@@ -1,14 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameController : MonoBehaviour
 {
     public bool twod = false;
+    public TextMeshProUGUI ammocount;
     public GameObject fpsCam;
     public GameObject gunCam;
     public GameObject orthoCam;
+    private GameObject[] shelves;
+    private GameObject[] cubes;
 
     public RigidbodyFirstPersonController pl;
     public Movement2D twodmove;
@@ -16,7 +20,8 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        shelves = GameObject.FindGameObjectsWithTag("shelf");
+        cubes = GameObject.FindGameObjectsWithTag("cube");
     }
 
     // Update is called once per frame
@@ -26,6 +31,8 @@ public class GameController : MonoBehaviour
         {
             Switch();
         }
+
+        ammocount.text = pl.gameObject.GetComponent<PlayerController>().ammo.ToString();
     }
 
     private void Switch()
@@ -39,6 +46,8 @@ public class GameController : MonoBehaviour
             fpsCam.GetComponent<Camera>().enabled = true;
             gunCam.GetComponent<Camera>().enabled = true;
             orthoCam.SetActive(false);
+            foreach (GameObject c in cubes)
+                c.SetActive(false);
         }
         else
         {
@@ -50,6 +59,8 @@ public class GameController : MonoBehaviour
             fpsCam.GetComponent<Camera>().enabled = false;
             gunCam.GetComponent<Camera>().enabled = false;
             orthoCam.SetActive(true);
+            foreach (GameObject c in cubes)
+                c.SetActive(true);
         }
     }
 }

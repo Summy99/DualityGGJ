@@ -31,6 +31,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "ammo")
+        {
+            ammo += 10;
+            Destroy(other.gameObject);
+        }
+    }
+
     private void Shoot()
     {
         if (!gc.twod)
