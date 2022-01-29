@@ -7,10 +7,15 @@ public class enemyBullet : MonoBehaviour
     public GameObject player;
     public Rigidbody rb;
     public float speed = 25f;
+
+    private void Awake()
+    {
+      //  player = GameObject.FindGameObjectWithTag("Player");
+       
+    }
     // Start is called before the first frame update
     void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
+    {  
         rb = GetComponent<Rigidbody>();
         transform.LookAt(player.transform);
     }
