@@ -22,6 +22,7 @@ public class Movement2D : MonoBehaviour
     public SpriteRenderer swordSprite;
 
     public GameObject swordRotato;
+    public Animator swordSwing;
 
     // Start is called before the first frame update
     void Start()
@@ -67,21 +68,28 @@ public class Movement2D : MonoBehaviour
         }
         if (Input.GetMouseButtonDown(0))
         {
-            StartCoroutine(swordSwing(1, 5));
+            swordSwing.SetBool("Studio Boolean", true);
+            //swordSwing.SetBool("Studio Boolean", !swordSwing.GetBool("Studio Boolean"));
+            //swordRotato.transform.SetPositionAndRotation(swordRotato.transform.position, new Quaternion(0, 0, 90, 90));
+            //StartCoroutine(swordSwing(1, 2));
         }
 
 
     }
-    IEnumerator swordSwing(float aValue, float aTime)
+    
+
+        
+   /* IEnumerator swordSwing(float aValue, float aTime)
     {
-        swordRotato.transform.Rotate(0, 0, 90);
+        swordRotato.transform.SetPositionAndRotation(swordRotato.transform.position, new Quaternion(0, 0, 90, 90));
+        print(swordRotato.transform.rotation.z);
         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
         {
-            swordRotato.transform.Rotate(0, 0, -10);
-            print("anything it doesnt matter");
-            if (swordRotato.transform.rotation.z >= -90)
+            swordRotato.transform.Rotate(0, 0, -1);
+            //print(swordRotato.transform.rotation.z);
+            if (swordRotato.transform.rotation.eulerAngles.z >= new Quaternion(0, 0, 270, -270).eulerAngles.z)
             {
-                swordRotato.transform.Rotate(0, 0, -90);
+              //  swordRotato.transform.Rotate(0, 0, -90);
                 print("anything it doesnt matter");
                 break;
             }
@@ -91,7 +99,7 @@ public class Movement2D : MonoBehaviour
 
         
        // return null;
-    }
+    }*/
 
 
 
