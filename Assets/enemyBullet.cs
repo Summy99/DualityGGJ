@@ -8,9 +8,16 @@ public class enemyBullet : MonoBehaviour
     public Rigidbody rb;
     public GameObject devil;
     public float speed = 25f;
+
+    private void Awake()
+    {
+      //  player = GameObject.FindGameObjectWithTag("Player");
+       
+    }
     // Start is called before the first frame update
     void Start()
-    {
+    { 
+
         rb = GetComponent<Rigidbody>();
         transform.rotation = devil.transform.rotation;
     }
