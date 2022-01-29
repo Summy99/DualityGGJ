@@ -6,13 +6,13 @@ public class enemyBullet : MonoBehaviour
 {
     public GameObject player;
     public Rigidbody rb;
+    public GameObject devil;
     public float speed = 25f;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody>();
-        transform.LookAt(player.transform);
+        transform.rotation = devil.transform.rotation;
     }
 
     // Update is called once per frame

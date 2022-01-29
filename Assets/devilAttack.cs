@@ -6,6 +6,7 @@ public class devilAttack : MonoBehaviour
 {
     public bool attack;
     public GameObject player;
+    private GameController gc;
 
     public GameObject wateroot;
 
@@ -14,6 +15,7 @@ public class devilAttack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         timer = timerOG;
     }
 
@@ -26,15 +28,23 @@ public class devilAttack : MonoBehaviour
             {
                 GameObject go = Instantiate(wateroot, transform.position, transform.rotation);
                 go.GetComponent<enemyBullet>().player = player;
+                go.GetComponent<enemyBullet>().devil = gameObject;
                 timer = timerOG;
             }
             else
             {
                 timer -= Time.deltaTime;
             }
-          
-            transform.LookAt(player.transform);
-            
+
+            if(!gc.twod)
+                transform.LookAt(player.transform);
+            else
+            {
+                Vector3 target = player.transform.position;
+                Vector3 direction = target - transform.position;
+                float rotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+                transform.rotation = Quaternion.Euler(0, rotation, 0);
+            }
         }
     }
     private void OnTriggerEnter(Collider other)
