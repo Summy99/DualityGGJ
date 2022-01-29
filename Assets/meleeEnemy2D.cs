@@ -22,6 +22,7 @@ public class meleeEnemy2D : MonoBehaviour
         {
           transform.position = Vector3.MoveTowards(transform.position, player.transform.position, 0.01f);
         }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -31,4 +32,5 @@ public class meleeEnemy2D : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    
 }
