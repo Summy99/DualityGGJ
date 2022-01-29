@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour
     public List<float> xValues; // List for x values in grid
     public List<float> yValues; // List for y values in grid
     public Vector3[,] grid; //2D array for positions in the grid.
-    public int gridsizeX;
-    public int gridsizeY;
+    public int gridsizeX; //19 for this project
+    public int gridsizeY; //11 for this project
     public float gridstartX;
     public float gridstartY;
     public GameObject cell;
