@@ -183,6 +183,7 @@ GameObject:
   - component: {fileID: 399137241182820253}
   - component: {fileID: 7061996327150586740}
   - component: {fileID: 5205501137060258471}
+  - component: {fileID: 8839704092793533924}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -339,6 +340,31 @@ MonoBehaviour:
   ammo: 50
   boolet: {fileID: 0}
   muzzleFlash: {fileID: 0}
+--- !u!114 &8839704092793533924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399137241193554559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaedc72f66af4624ab52fd6ceb667d47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocity: {x: 0, y: 0}
+  speed: 0
+  rb: {fileID: 0}
+  crying: {x: 0, y: 0}
+  mousePos: {x: 0, y: 0}
+  cam: {fileID: 0}
+  dead: 0
+  lookDir: {x: 0, y: 0, z: 0}
+  sprite: {fileID: 0}
+  swordSprite: {fileID: 0}
+  swordRotato: {fileID: 0}
+  swordSwing: {fileID: 0}
+  startPos: {x: 0, y: 0, z: 0}
 --- !u!1 &935127428677094481
 GameObject:
   m_ObjectHideFlags: 0

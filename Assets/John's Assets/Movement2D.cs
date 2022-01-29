@@ -6,7 +6,7 @@ public class Movement2D : MonoBehaviour
 {
     public Vector2 velocity;
     public float speed;
-    public Rigidbody2D rb;
+    public Rigidbody rb;
 
     public Vector2 crying;
 
@@ -30,7 +30,7 @@ public class Movement2D : MonoBehaviour
     {
         dead = false;
         startPos = transform.position;
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody>();
         sprite = GetComponent<SpriteRenderer>();
     }
 
@@ -50,31 +50,31 @@ public class Movement2D : MonoBehaviour
             mousePos = cam.ScreenToWorldPoint(Input.mousePosition);
             if (mousePos.x > transform.localPosition.x)
             {
-                sprite.flipY = false;
-                swordSprite.flipY = false;
+                //sprite.flipY = false;
+                //swordSprite.flipY = false;
             }
             else
             {
-                sprite.flipY = true;
-                swordSprite.flipY = true;
+                //sprite.flipY = true;
+                //swordSprite.flipY = true;
             }
 
 
 
             rb.MovePosition(crying + velocity * Time.deltaTime);
 
-            lookDir = mousePos - rb.position;
+            lookDir = mousePos - new Vector2(rb.position.x, rb.position.z);
 
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
-            rb.rotation = angle;
+            rb.rotation = Quaternion.Euler(0, angle, 0);
 
-            if (Input.GetMouseButtonDown(0))
-            {
-                swordSwing.SetBool("Studio Boolean", true);
+            //if (Input.GetMouseButtonDown(0))
+            //{
+                //swordSwing.SetBool("Studio Boolean", true);
                 //swordSwing.SetBool("Studio Boolean", !swordSwing.GetBool("Studio Boolean"));
                 //swordRotato.transform.SetPositionAndRotation(swordRotato.transform.position, new Quaternion(0, 0, 90, 90));
                 //StartCoroutine(swordSwing(1, 2));
-            }
+            //}
         }
         else
         {
