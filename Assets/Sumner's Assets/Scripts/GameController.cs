@@ -22,6 +22,8 @@ public class GameController : MonoBehaviour
     {
         shelves = GameObject.FindGameObjectsWithTag("shelf");
         cubes = GameObject.FindGameObjectsWithTag("cube");
+        foreach (GameObject c in cubes)
+            c.SetActive(false);
     }
 
     // Update is called once per frame
