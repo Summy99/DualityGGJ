@@ -8,6 +8,7 @@ public class GameController : MonoBehaviour
 {
     public bool twod = false;
     public TextMeshProUGUI ammocount;
+    public TextMeshProUGUI healthcount;
     public GameObject fpsCam;
     public GameObject gunCam;
     public GameObject orthoCam;
@@ -35,6 +36,7 @@ public class GameController : MonoBehaviour
         }
 
         ammocount.text = pl.gameObject.GetComponent<PlayerController>().ammo.ToString();
+        healthcount.text = pl.gameObject.GetComponent<PlayerHealth>().health.ToString() + "/" + pl.gameObject.GetComponent<PlayerHealth>().maxhealth.ToString();
     }
 
     private void Switch()
