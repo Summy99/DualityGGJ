@@ -223,6 +223,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 100016, guid: c9a851438855582499831507f0b6db3e, type: 3}
   m_PrefabInstance: {fileID: 574253913}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &257452882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257452881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d8b0ff67ce614c43a3b3f630ccf8db6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attack: 0
+  player: {fileID: 0}
+  wateroot: {fileID: 2891836114624121332, guid: 728365372e213a2499f6b31d60ee448a, type: 3}
+  timer: 0
+  timerOG: 0.5
 --- !u!135 &257452884
 SphereCollider:
   m_ObjectHideFlags: 0
