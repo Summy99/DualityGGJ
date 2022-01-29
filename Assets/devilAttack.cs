@@ -28,7 +28,7 @@ public class devilAttack : MonoBehaviour
             {
                 GameObject go = Instantiate(wateroot, transform.position, transform.rotation);
                 go.GetComponent<enemyBullet>().player = player;
-                go.GetComponent<enemyBullet>().devil = gameObject;
+                //go.GetComponent<enemyBullet>().devil = gameObject;
                 timer = timerOG;
             }
             else
