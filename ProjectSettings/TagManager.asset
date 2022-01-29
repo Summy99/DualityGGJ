@@ -7,6 +7,7 @@ TagManager:
   - sword
   - moveRadius
   - enemy
+  - Sun
   layers:
   - Default
   - TransparentFX
