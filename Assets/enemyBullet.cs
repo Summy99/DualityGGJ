@@ -24,4 +24,13 @@ public class enemyBullet : MonoBehaviour
     {
             rb.velocity = transform.forward * speed;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(10);
+            Destroy(gameObject);
+        }
+    }
 }
