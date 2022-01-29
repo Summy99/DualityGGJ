@@ -23,11 +23,13 @@ public class Movement2D : MonoBehaviour
 
     public GameObject swordRotato;
     public Animator swordSwing;
+    public Vector3 startPos;
 
     // Start is called before the first frame update
     void Start()
     {
         dead = false;
+        startPos = transform.position;
         rb = GetComponent<Rigidbody2D>();
         sprite = GetComponent<SpriteRenderer>();
     }
@@ -65,41 +67,72 @@ public class Movement2D : MonoBehaviour
 
             float angle = Mathf.Atan2(lookDir.y, lookDir.x) * Mathf.Rad2Deg;
             rb.rotation = angle;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                swordSwing.SetBool("Studio Boolean", true);
+                //swordSwing.SetBool("Studio Boolean", !swordSwing.GetBool("Studio Boolean"));
+                //swordRotato.transform.SetPositionAndRotation(swordRotato.transform.position, new Quaternion(0, 0, 90, 90));
+                //StartCoroutine(swordSwing(1, 2));
+            }
         }
-        if (Input.GetMouseButtonDown(0))
+        else
         {
-            swordSwing.SetBool("Studio Boolean", true);
-            //swordSwing.SetBool("Studio Boolean", !swordSwing.GetBool("Studio Boolean"));
-            //swordRotato.transform.SetPositionAndRotation(swordRotato.transform.position, new Quaternion(0, 0, 90, 90));
-            //StartCoroutine(swordSwing(1, 2));
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                respawn();
+            }
         }
+        
 
 
     }
-    
-
-        
-   /* IEnumerator swordSwing(float aValue, float aTime)
+    public void die()
     {
-        swordRotato.transform.SetPositionAndRotation(swordRotato.transform.position, new Quaternion(0, 0, 90, 90));
-        print(swordRotato.transform.rotation.z);
-        for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
-        {
-            swordRotato.transform.Rotate(0, 0, -1);
-            //print(swordRotato.transform.rotation.z);
-            if (swordRotato.transform.rotation.eulerAngles.z >= new Quaternion(0, 0, 270, -270).eulerAngles.z)
-            {
-              //  swordRotato.transform.Rotate(0, 0, -90);
-                print("anything it doesnt matter");
-                break;
-            }
-            yield return null;
-        }
-       
+        dead = true;
+        sprite.enabled = false;
+    }
+    public void respawn()
+    {
+        dead = false;
+        sprite.enabled = true;
+        transform.position = startPos;
+    }
 
-        
-       // return null;
-    }*/
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("enemy") && gameObject.CompareTag("Player"))
+        {
+            die();
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       
+    }
+
+
+    /* IEnumerator swordSwing(float aValue, float aTime)
+     {
+         swordRotato.transform.SetPositionAndRotation(swordRotato.transform.position, new Quaternion(0, 0, 90, 90));
+         print(swordRotato.transform.rotation.z);
+         for (float t = 0.0f; t < 1.0f; t += Time.deltaTime / aTime)
+         {
+             swordRotato.transform.Rotate(0, 0, -1);
+             //print(swordRotato.transform.rotation.z);
+             if (swordRotato.transform.rotation.eulerAngles.z >= new Quaternion(0, 0, 270, -270).eulerAngles.z)
+             {
+               //  swordRotato.transform.Rotate(0, 0, -90);
+                 print("anything it doesnt matter");
+                 break;
+             }
+             yield return null;
+         }
+
+
+
+        // return null;
+     }*/
 
 
 

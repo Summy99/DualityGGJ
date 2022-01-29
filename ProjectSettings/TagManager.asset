@@ -4,6 +4,9 @@
 TagManager:
   serializedVersion: 2
   tags:
+  - sword
+  - moveRadius
+  - enemy
   - Sun
   layers:
   - Default
