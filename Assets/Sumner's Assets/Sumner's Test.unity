@@ -1547,11 +1547,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 399137241182820253, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: movementSettings.BackwardSpeed
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 399137241182820253, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: movementSettings.StrafeSpeed
-      value: 10
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 399137241182820253, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: movementSettings.RunMultiplier

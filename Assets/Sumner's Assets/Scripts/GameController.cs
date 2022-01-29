@@ -33,10 +33,9 @@ public class GameController : MonoBehaviour
         if(twod)
         {
             twod = false;
-            pl.enabled = true;
             pl.mouseLook.SetCursorLock(true);
             mf.enabled = false;
-            twodmove.enabled = false;
+            //twodmove.enabled = false;
             fpsCam.GetComponent<Camera>().enabled = true;
             gunCam.GetComponent<Camera>().enabled = true;
             orthoCam.SetActive(false);
@@ -45,9 +44,9 @@ public class GameController : MonoBehaviour
         {
             pl.mouseLook.SetCursorLock(false);
             twod = true;
-            pl.enabled = false;
             mf.enabled = true;
-            twodmove.enabled = true;
+            //twodmove.enabled = true;
+            fpsCam.transform.rotation = Quaternion.Euler(new Vector3(0, fpsCam.transform.rotation.eulerAngles.y, fpsCam.transform.rotation.eulerAngles.z));
             fpsCam.GetComponent<Camera>().enabled = false;
             gunCam.GetComponent<Camera>().enabled = false;
             orthoCam.SetActive(true);
