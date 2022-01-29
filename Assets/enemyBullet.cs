@@ -6,6 +6,7 @@ public class enemyBullet : MonoBehaviour
 {
     public GameObject player;
     public Rigidbody rb;
+    public GameObject devil;
     public float speed = 25f;
 
     private void Awake()
@@ -15,9 +16,10 @@ public class enemyBullet : MonoBehaviour
     }
     // Start is called before the first frame update
     void Start()
-    {  
+    { 
+
         rb = GetComponent<Rigidbody>();
-        transform.LookAt(player.transform);
+        transform.rotation = devil.transform.rotation;
     }
 
     // Update is called once per frame
