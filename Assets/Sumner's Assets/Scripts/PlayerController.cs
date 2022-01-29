@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public int ammo = 50;
 
     private Animator anim;
+    private Collider col;
     private AnimationState state;
     public GameObject boolet;
     private GameObject cameraRef;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+        col = GetComponent<Collider>();
         anim = GetComponent<Animator>();
         cameraRef = transform.GetChild(0).gameObject;
     }
@@ -29,6 +31,8 @@ public class PlayerController : MonoBehaviour
         {
             Shoot();
         }
+
+        
     }
 
     private void OnTriggerEnter(Collider other)
