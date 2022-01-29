@@ -447,6 +447,22 @@ PrefabInstance:
       propertyPath: advancedSettings.airControl
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 399137241182820253, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: movementSettings.ForwardSpeed
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 399137241182820253, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: movementSettings.BackwardSpeed
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 399137241182820253, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: movementSettings.StrafeSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 399137241182820253, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: movementSettings.RunMultiplier
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 399137241182820255, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: Camera
       value: 
@@ -575,6 +591,10 @@ PrefabInstance:
       propertyPath: boolet
       value: 
       objectReference: {fileID: 9050957730347095063, guid: 9a2db32e4e95300448dc3cdd9588e374, type: 3}
+    - target: {fileID: 5205501137060258471, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf, type: 3}
     - target: {fileID: 5993642750321007395, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Depth
       value: 1

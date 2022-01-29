@@ -5,7 +5,7 @@ using UnityEngine;
 public class Boolet : MonoBehaviour
 {
     private Rigidbody rb;
-    private float speed = 10;
+    private float speed = 25;
 
     // Start is called before the first frame update
     void Start()

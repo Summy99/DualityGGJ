@@ -8,8 +8,10 @@ public class PlayerController : MonoBehaviour
     private AnimationState state;
     public GameObject boolet;
     private GameObject cameraRef;
+    public GameObject muzzleFlash;
 
     private GameObject booletSpawned;
+    private GameObject flashTemp;
 
     void Start()
     {
@@ -30,5 +32,7 @@ public class PlayerController : MonoBehaviour
         anim.SetTrigger("fire");
         booletSpawned = Instantiate(boolet, transform.GetChild(0).GetChild(0).GetChild(0).position, Quaternion.Euler(cameraRef.transform.rotation.eulerAngles.x + 90, cameraRef.transform.rotation.eulerAngles.y, cameraRef.transform.rotation.eulerAngles.z));
         Destroy(booletSpawned, 10f);
+        flashTemp = Instantiate(muzzleFlash, transform.GetChild(0).GetChild(0).GetChild(0));
+        Destroy(flashTemp, 1);
     }
 }
