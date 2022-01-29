@@ -6,7 +6,7 @@ public class Movement2D : MonoBehaviour
 {
     public Vector3 velocity;
     public float speed;
-    public Rigidbody2D rb;
+    public Rigidbody rb;
 
     public bool dead;
 
@@ -14,6 +14,7 @@ public class Movement2D : MonoBehaviour
     void Start()
     {
         dead = false;
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -22,7 +23,7 @@ public class Movement2D : MonoBehaviour
         if (!dead)
         {
             velocity.x = Input.GetAxisRaw("Horizontal");// * speed;
-            velocity.y = Input.GetAxisRaw("Vertical");// * speed;
+            velocity.z = Input.GetAxisRaw("Vertical");// * speed;
 
             velocity = Vector3.Normalize(velocity);
             velocity *= speed;
