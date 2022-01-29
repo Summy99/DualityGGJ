@@ -1,12 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameController : MonoBehaviour
 {
     private bool twod = false;
     public GameObject fpsCam;
+    public GameObject gunCam;
     public GameObject orthoCam;
+
+    public RigidbodyFirstPersonController pl;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +31,17 @@ public class GameController : MonoBehaviour
         if(twod)
         {
             twod = false;
-            fpsCam.SetActive(true);
+            pl.enabled = true;
+            fpsCam.GetComponent<Camera>().enabled = true;
+            gunCam.GetComponent<Camera>().enabled = true;
             orthoCam.SetActive(false);
         }
         else
         {
             twod = true;
-            fpsCam.SetActive(false);
+            pl.enabled = false;
+            fpsCam.GetComponent<Camera>().enabled = false;
+            gunCam.GetComponent<Camera>().enabled = false;
             orthoCam.SetActive(true);
         }
     }
