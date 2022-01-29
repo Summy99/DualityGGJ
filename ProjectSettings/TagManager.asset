@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - sword
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -14,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Gun
+  - floor
   - 
   - 
   - 
@@ -39,6 +38,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: gun
+    uniqueID: 1601774415
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
