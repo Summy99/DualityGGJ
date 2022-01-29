@@ -32,5 +32,10 @@ public class enemyBullet : MonoBehaviour
             collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(10);
             Destroy(gameObject);
         }
+
+        if(collision.gameObject.CompareTag("obstacle"))
+        {
+            Destroy(gameObject);
+        }
     }
 }

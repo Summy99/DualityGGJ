@@ -10,6 +10,7 @@ TagManager:
   - Sun
   - cube
   - shelf
+  - obstacle
   layers:
   - Default
   - TransparentFX
