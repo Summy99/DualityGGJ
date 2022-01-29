@@ -160,7 +160,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (m_IsGrounded)
             {
-                m_RigidBody.drag = 5f;
+                if (Mathf.Abs(input.x) > float.Epsilon || Mathf.Abs(input.y) > float.Epsilon)
+                    m_RigidBody.drag = 0;
+                else
+                    m_RigidBody.drag = 15f;
 
                 if (m_Jump)
                 {

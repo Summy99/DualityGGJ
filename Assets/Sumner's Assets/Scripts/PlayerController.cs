@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    public int ammo = 50;
+
     private Animator anim;
     private AnimationState state;
     public GameObject boolet;
@@ -21,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && ammo > 0)
         {
             Shoot();
         }
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
+        ammo--;
         anim.SetTrigger("fire");
         booletSpawned = Instantiate(boolet, transform.GetChild(0).GetChild(0).GetChild(0).position, Quaternion.Euler(cameraRef.transform.rotation.eulerAngles.x + 90, cameraRef.transform.rotation.eulerAngles.y, cameraRef.transform.rotation.eulerAngles.z));
         Destroy(booletSpawned, 10f);
