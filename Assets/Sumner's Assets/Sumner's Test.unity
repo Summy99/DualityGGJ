@@ -1205,6 +1205,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eaedc72f66af4624ab52fd6ceb667d47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1239218945 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5220334631958497153, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+  m_PrefabInstance: {fileID: 1860740998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d994fd5d88c90df4dbf2449e62285b9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1287674209
 GameObject:
   m_ObjectHideFlags: 0
@@ -1218,7 +1229,7 @@ GameObject:
   - component: {fileID: 1287674212}
   m_Layer: 0
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1263,11 +1274,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4de0c0786afb7245865aff9bb667944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  twod: 0
   fpsCam: {fileID: 1327376779}
   gunCam: {fileID: 1185264582}
   orthoCam: {fileID: 391540650}
   pl: {fileID: 1682048587}
   twodmove: {fileID: 1239218944}
+  mf: {fileID: 1239218945}
 --- !u!20 &1326713553 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 399137241192439897, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
@@ -1704,6 +1717,10 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf, type: 3}
+    - target: {fileID: 5220334631958497153, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 391540652}
     - target: {fileID: 5993642750321007395, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Depth
       value: 1

@@ -11,12 +11,14 @@ public class PlayerController : MonoBehaviour
     public GameObject boolet;
     private GameObject cameraRef;
     public GameObject muzzleFlash;
+    private GameController gc;
 
     private GameObject booletSpawned;
     private GameObject flashTemp;
 
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         anim = GetComponent<Animator>();
         cameraRef = transform.GetChild(0).gameObject;
     }
@@ -31,11 +33,23 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
-        ammo--;
-        anim.SetTrigger("fire");
-        booletSpawned = Instantiate(boolet, transform.GetChild(0).GetChild(0).GetChild(0).position, Quaternion.Euler(cameraRef.transform.rotation.eulerAngles.x + 90, cameraRef.transform.rotation.eulerAngles.y, cameraRef.transform.rotation.eulerAngles.z));
-        Destroy(booletSpawned, 10f);
-        flashTemp = Instantiate(muzzleFlash, transform.GetChild(0).GetChild(0).GetChild(0));
-        Destroy(flashTemp, 1);
+        if (!gc.twod)
+        {
+            ammo--;
+            anim.SetTrigger("fire");
+            booletSpawned = Instantiate(boolet, transform.GetChild(0).GetChild(0).GetChild(0).position, Quaternion.Euler(cameraRef.transform.rotation.eulerAngles.x + 90, cameraRef.transform.rotation.eulerAngles.y, cameraRef.transform.rotation.eulerAngles.z));
+            Destroy(booletSpawned, 10f);
+            flashTemp = Instantiate(muzzleFlash, transform.GetChild(0).GetChild(0).GetChild(0));
+            Destroy(flashTemp, 1);
+        }
+        else
+        {
+            ammo--;
+            anim.SetTrigger("fire");
+            flashTemp = Instantiate(muzzleFlash, transform.GetChild(0).GetChild(0).GetChild(0));
+            Destroy(flashTemp, 1);
+            booletSpawned = Instantiate(boolet, transform.GetChild(0).GetChild(0).GetChild(0).position, Quaternion.Euler(transform.rotation.eulerAngles.x + 90, transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.z));
+            Destroy(booletSpawned, 10f);
+        }
     }
 }
