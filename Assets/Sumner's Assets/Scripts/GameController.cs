@@ -57,8 +57,8 @@ public class GameController : MonoBehaviour
     {
         Cursor.visible = false;
         twodCrosshair.transform.position = Input.mousePosition;
-        ammocount.text = pl.gameObject.GetComponent<PlayerController>().ammo.ToString();
-        healthcount.text = pl.gameObject.GetComponent<PlayerHealth>().health.ToString() + "/" + pl.gameObject.GetComponent<PlayerHealth>().maxhealth.ToString();
+        ammocount.text = "Ammo: "+pl.gameObject.GetComponent<PlayerController>().ammo.ToString();
+        healthcount.text = "Health: "+pl.gameObject.GetComponent<PlayerHealth>().health.ToString() + "/" + pl.gameObject.GetComponent<PlayerHealth>().maxhealth.ToString();
     }
 
     public void johnswitch()
