@@ -32,7 +32,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        int[] gibsToSpawn = new int[1];
+        int[] gibsToSpawn = new int[5];
 
         for (int i = 0; i < gibsToSpawn.Length; i++)
             gibsToSpawn[i] = Random.Range(0, 8);
@@ -41,7 +41,7 @@ public class EnemyHealth : MonoBehaviour
         {
             GameObject gib = Instantiate(gibs[i], transform.position, Random.rotation);
 
-            gib.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(10, 20), Random.Range(10, 20), Random.Range(10, 20)), ForceMode.Impulse);
+            gib.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0.5f, 3), Random.Range(0.5f, 3), Random.Range(0.5f, 3)), ForceMode.Impulse);
         }
 
         Instantiate(exp, transform.position, transform.rotation);
