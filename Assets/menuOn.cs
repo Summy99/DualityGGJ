@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityStandardAssets.Characters.FirstPerson;
 
 public class menuOn : MonoBehaviour
 {
@@ -11,6 +12,8 @@ public class menuOn : MonoBehaviour
     public GameObject mainmenuCanvas;
     public void menuTurnOn()
     {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<RigidbodyFirstPersonController>().mouseLook.lockCursor = false;
+
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {
             turnoff.enabled = false;
