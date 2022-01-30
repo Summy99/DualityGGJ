@@ -16,6 +16,9 @@ public class GameController : MonoBehaviour
     private GameObject[] shelves;
     private GameObject[] cubes;
     private GameObject[] fakewalls;
+    private AudioSource src;
+    public AudioClip twodtothreed;
+    public AudioClip threedtotwod;
 
     public Image threedCrosshair;
     public Image twodCrosshair;
@@ -31,6 +34,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        src = pl.gameObject.GetComponent<AudioSource>();
         shelves = GameObject.FindGameObjectsWithTag("shelf");
         cubes = GameObject.FindGameObjectsWithTag("cube");
         fakewalls = GameObject.FindGameObjectsWithTag("fakewall");
@@ -60,6 +64,9 @@ public class GameController : MonoBehaviour
 
         if (twod)
         {
+            src.clip = twodtothreed;
+            src.Stop();
+            src.PlayDelayed(1);
             twodCrosshair.enabled = false;
             //fpsCam.GetComponent<Camera>().enabled = true;
             //gunCam.GetComponent<Camera>().enabled = true;
@@ -67,6 +74,9 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            src.clip = threedtotwod;
+            src.Stop();
+            src.PlayDelayed(2);
             threedCrosshair.enabled = false;
             fpsCam.GetComponent<Camera>().enabled = false;
             gunCam.GetComponent<Camera>().enabled = false;
@@ -89,7 +99,7 @@ public class GameController : MonoBehaviour
             twod = false;
             pl.mouseLook.SetCursorLock(true);
             foreach (GameObject f in fakewalls)
-                f.SetActive(true);
+                f.GetComponent<Collider>().enabled = true;
             mf.enabled = false;
             //twodmove.enabled = false;
             fpsCam.GetComponent<Camera>().enabled = true;
@@ -104,7 +114,7 @@ public class GameController : MonoBehaviour
             twodCrosshair.enabled = true;
             pl.mouseLook.SetCursorLock(false);
             foreach (GameObject f in fakewalls)
-                f.SetActive(false);
+                f.GetComponent<Collider>().enabled = false;
             twod = true;
             mf.enabled = true;
             //twodmove.enabled = true;

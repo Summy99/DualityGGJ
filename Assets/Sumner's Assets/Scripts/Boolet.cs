@@ -13,10 +13,12 @@ public class Boolet : MonoBehaviour
     public GameObject burst;
     private float speed = 25;
     private bool exists = true;
+    private AudioSource src;
 
     // Start is called before the first frame update
     void Start()
     {
+        src = GetComponent<AudioSource>();
         col = GetComponent<Collider>();
         rb = GetComponent<Rigidbody>();
         mesh = GetComponent<MeshRenderer>();
@@ -35,6 +37,7 @@ public class Boolet : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("obstacle") || collision.gameObject.CompareTag("cube") || collision.gameObject.CompareTag("shelf") || collision.gameObject.CompareTag("fakewall"))
         {
+            src.Play();
             mesh.enabled = false;
             col.enabled = false;
             rb.velocity = Vector3.zero;
