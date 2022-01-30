@@ -54,6 +54,9 @@ public class EnemyHealth : MonoBehaviour
 
         transform.parent.Find("polySurface1").GetComponent<SkinnedMeshRenderer>().enabled = false;
         transform.parent.GetComponent<EnemyAiTutorial>().enabled = false;
+        Collider[] cols = GetComponents<Collider>();
+        foreach (Collider c in cols)
+            c.enabled = false;
 
         Instantiate(exp, transform.position, transform.rotation);
         Destroy(transform.parent.gameObject, 2f);

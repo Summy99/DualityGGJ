@@ -127,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77239f418d23dff4886fe14e17cc4c83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splat: {fileID: 0}
   bloodSplat: {fileID: 1000010191825552, guid: 83e55d3418297934fab882559d009285, type: 3}
 --- !u!82 &7190038167156511330
 AudioSource:
@@ -138,9 +139,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4842ce69d563f1a498d9ca13833d9d15, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.473
   m_Pitch: 1
   Loop: 0
   Mute: 0

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Splatter : MonoBehaviour
 {
     private AudioSource src;
-    public AudioClip splat;
     public GameObject bloodSplat;
 
     private void Start()
@@ -15,7 +14,7 @@ public class Splatter : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        src.PlayOneShot(splat);
+        src.Play();
         Instantiate(bloodSplat,transform.position, Quaternion.identity);
     }
 }
