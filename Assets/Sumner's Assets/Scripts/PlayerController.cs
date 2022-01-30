@@ -42,6 +42,12 @@ public class PlayerController : MonoBehaviour
             ammo += 10;
             Destroy(other.gameObject);
         }
+
+        if (other.name == "HP")
+        {
+            GetComponent<PlayerHealth>().health += 10;
+            Destroy(other.gameObject);
+        }
     }
 
     private void Shoot()
