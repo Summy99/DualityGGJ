@@ -17,6 +17,9 @@ public class GameController : MonoBehaviour
     private GameObject[] fakewalls;
 
     public RigidbodyFirstPersonController pl;
+    public PlayerController pc;
+    public EnemyAiTutorial eait;
+
     public Movement2D twodmove;
     public MouseFollow mf;
 
@@ -46,6 +49,13 @@ public class GameController : MonoBehaviour
     public void johnswitch()
     {
         cinemachineCam.GetComponent<Camera>().enabled = true;
+
+        pl.enabled = false;
+        pc.enabled = false;
+        eait.enabled = false;
+
+
+
         if (twod)
         {
             //fpsCam.GetComponent<Camera>().enabled = true;
@@ -62,6 +72,12 @@ public class GameController : MonoBehaviour
     public void Switch()
     {
         cinemachineCam.GetComponent<Camera>().enabled = false;
+
+        pl.enabled = true;
+        pc.enabled = true;
+        eait.enabled = true;
+
+
         if (twod)
         {
             twod = false;
