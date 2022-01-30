@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Sumner's Assets/Death.unity
     guid: cbc8664e24717d14bad29162408af5e1
+  - enabled: 1
+    path: Assets/Sumner's Assets/winFool.unity
+    guid: cd1356ca4f2ea3f45880464acc99f854
   m_configObjects: {}

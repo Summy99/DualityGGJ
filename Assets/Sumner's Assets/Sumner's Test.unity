@@ -1915,8 +1915,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498568487}
-  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 20.02, z: 0}
+  m_LocalRotation: {x: 0, y: 0.9998676, z: -0, w: -0.016273698}
+  m_LocalPosition: {x: 0.412, y: 1.4890001, z: -39.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3211,7 +3211,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7821437, y: 1}
+    m_SensorSize: {x: 1.7766905, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4076,6 +4076,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   message: {fileID: 1936086780}
   enemydead: 0
+  tutcol: 0
 --- !u!1 &1313396512
 GameObject:
   m_ObjectHideFlags: 0
@@ -7108,6 +7109,7 @@ GameObject:
   - component: {fileID: 1990693715}
   - component: {fileID: 1990693717}
   - component: {fileID: 1990693716}
+  - component: {fileID: 1990693718}
   m_Layer: 5
   m_Name: AmmoCount
   m_TagString: Untagged
@@ -7233,6 +7235,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1990693714}
   m_CullTransparentMesh: 0
+--- !u!114 &1990693718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1990693714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160f0cf8c3c8bbb439e41a61b4c5cbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curColorChange: greenUp
+  colorRed: 1
+  colorGreen: 0
+  colorBlue: 0
+  roc: 0.05
 --- !u!1 &1995077596
 GameObject:
   m_ObjectHideFlags: 0
