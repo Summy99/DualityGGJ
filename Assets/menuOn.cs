@@ -12,7 +12,8 @@ public class menuOn : MonoBehaviour
     public GameObject mainmenuCanvas;
     public void menuTurnOn()
     {
-        GameObject.FindGameObjectWithTag("Player").GetComponent<RigidbodyFirstPersonController>().mouseLook.lockCursor = false;
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
 
         if(SceneManager.GetActiveScene().buildIndex == 0)
         {

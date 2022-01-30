@@ -25,11 +25,16 @@ public class MainMenuScript : MonoBehaviour
                 if (pause.activeSelf)
                 {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<RigidbodyFirstPersonController>().mouseLook.lockCursor = false;
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = false;
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
                     Time.timeScale = 0;
                 }
                 else
                 {
                     GameObject.FindGameObjectWithTag("Player").GetComponent<RigidbodyFirstPersonController>().mouseLook.lockCursor = true;
+                    GameObject.FindGameObjectWithTag("Player").GetComponent<RigidbodyFirstPersonController>().enabled = true;
+                    Cursor.visible = false;
                     Time.timeScale = 1;
                 }
             }
