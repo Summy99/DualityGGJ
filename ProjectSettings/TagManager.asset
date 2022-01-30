@@ -13,6 +13,7 @@ TagManager:
   - obstacle
   - fakewall
   - HP
+  - ammo
   layers:
   - Default
   - TransparentFX
