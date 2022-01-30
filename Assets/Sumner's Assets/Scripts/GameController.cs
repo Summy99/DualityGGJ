@@ -32,10 +32,10 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            Switch();
-        }
+        //if(Input.GetKeyDown(KeyCode.E))
+        //{
+            //Switch();
+        //}
 
         ammocount.text = pl.gameObject.GetComponent<PlayerController>().ammo.ToString();
         healthcount.text = pl.gameObject.GetComponent<PlayerHealth>().health.ToString() + "/" + pl.gameObject.GetComponent<PlayerHealth>().maxhealth.ToString();
