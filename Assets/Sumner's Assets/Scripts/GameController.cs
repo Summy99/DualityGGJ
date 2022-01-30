@@ -99,7 +99,7 @@ public class GameController : MonoBehaviour
             twod = false;
             pl.mouseLook.SetCursorLock(true);
             foreach (GameObject f in fakewalls)
-                f.SetActive(true);
+                f.GetComponent<Collider>().enabled = true;
             mf.enabled = false;
             //twodmove.enabled = false;
             fpsCam.GetComponent<Camera>().enabled = true;
@@ -114,7 +114,7 @@ public class GameController : MonoBehaviour
             twodCrosshair.enabled = true;
             pl.mouseLook.SetCursorLock(false);
             foreach (GameObject f in fakewalls)
-                f.SetActive(false);
+                f.GetComponent<Collider>().enabled = false;
             twod = true;
             mf.enabled = true;
             //twodmove.enabled = true;
