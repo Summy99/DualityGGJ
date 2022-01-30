@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    private AudioSource src;
+    public AudioClip sizzle, death;
+
     public int health = 100;
     public int maxhealth = 100;
 
     void Start()
     {
-        
+        src = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -20,6 +23,7 @@ public class PlayerHealth : MonoBehaviour
 
     public void DamagePlayer(int damage)
     {
+        src.PlayOneShot(sizzle);
         health -= damage;
 
         if(health <= 0)
@@ -30,6 +34,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void Die()
     {
+        transform.Find("music").gameObject.SetActive(false);
+        src.PlayOneShot(death);
         print("you died");
     }
 }

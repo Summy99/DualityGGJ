@@ -68,6 +68,7 @@ public class GameController : MonoBehaviour
             src.Stop();
             src.PlayDelayed(1);
             twodCrosshair.enabled = false;
+            pl.gameObject.transform.Find("firesfx").gameObject.GetComponent<AudioSource>().volume = 1;
             //fpsCam.GetComponent<Camera>().enabled = true;
             //gunCam.GetComponent<Camera>().enabled = true;
             orthoCam.SetActive(false);
@@ -78,6 +79,7 @@ public class GameController : MonoBehaviour
             src.Stop();
             src.PlayDelayed(2);
             threedCrosshair.enabled = false;
+            pl.gameObject.transform.Find("firesfx").gameObject.GetComponent<AudioSource>().volume = 0.5f;
             fpsCam.GetComponent<Camera>().enabled = false;
             gunCam.GetComponent<Camera>().enabled = false;
             //orthoCam.SetActive(true);

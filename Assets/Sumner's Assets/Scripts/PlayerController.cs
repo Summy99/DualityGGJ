@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     public GameObject muzzleFlash;
     private GameController gc;
     private AudioSource src;
-    public AudioClip bang;
+
+    public AudioClip bang, ammosfx, hpsfx;
 
     private GameObject booletSpawned;
     private GameObject flashTemp;
@@ -41,12 +42,14 @@ public class PlayerController : MonoBehaviour
         if (other.name == "ammo")
         {
             ammo += 10;
+            src.PlayOneShot(ammosfx);
             Destroy(other.gameObject);
         }
 
         if (other.name == "HP")
         {
             GetComponent<PlayerHealth>().health += 50;
+            src.PlayOneShot(hpsfx);
             Destroy(other.gameObject);
         }
     }
