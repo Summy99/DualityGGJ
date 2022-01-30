@@ -39,14 +39,14 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "ammo")
+        if (other.CompareTag("ammo"))
         {
             ammo += 10;
             src.PlayOneShot(ammosfx);
             Destroy(other.gameObject);
         }
 
-        if (other.name == "HP")
+        if (other.CompareTag("HP"))
         {
             GetComponent<PlayerHealth>().health += 50;
             src.PlayOneShot(hpsfx);

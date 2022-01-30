@@ -6,16 +6,17 @@ using UnityEngine.AI;
 public class funnavmeshactivities : MonoBehaviour
 {
 
-    public GameObject flyFloor;
+    private GameObject[] flyFloor;
     public NavMeshSurface nav3D;
     public NavMeshSurface nav2D;
 
     // Start is called before the first frame update
     void Start()
     {
+        flyFloor = GameObject.FindGameObjectsWithTag("flyfloors");
 
-
-        flyFloor.GetComponent<Collider>().enabled = false;
+        foreach (GameObject f in flyFloor)
+            f.GetComponent<Collider>().enabled = false;
     }
 
     // Update is called once per frame
