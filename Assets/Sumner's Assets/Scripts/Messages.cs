@@ -6,6 +6,9 @@ using TMPro;
 public class Messages : MonoBehaviour
 {
     public TextMeshProUGUI message;
+    public bool enemydead = false;
+    private bool twoplayed = false;
+    private bool threeplayed = false;
 
     void Start()
     {
@@ -15,9 +18,11 @@ public class Messages : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && !twoplayed)
             StartCoroutine(TextStageTwo());
 
+        if (enemydead && !threeplayed)
+            StartCoroutine(TextStageThree());
     }
 
     IEnumerator TextIntro()
@@ -33,10 +38,21 @@ public class Messages : MonoBehaviour
 
     IEnumerator TextStageTwo()
     {
+        twoplayed = true;
         yield return new WaitForSeconds(3);
         message.text = "I knew it! But be careful, there's bound to be water imps around.";
         yield return new WaitForSeconds(5);
         message.text = "";
     }
 
+
+    IEnumerator TextStageThree()
+    {
+        threeplayed = true;
+        message.text = "Nice job. It didn't stand a chance.";
+        yield return new WaitForSeconds(3);
+        message.text = "You should look around this room for some more ammo for me and fuel for you!";
+        yield return new WaitForSeconds(3);
+        message.text = "";
+    }
 }
