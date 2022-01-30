@@ -1182,6 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c58e9c50ba10c84b870f46b79f5e9af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: {fileID: 0}
 --- !u!114 &644992784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1407,6 +1408,7 @@ GameObject:
   - component: {fileID: 981064304}
   - component: {fileID: 981064306}
   - component: {fileID: 981064305}
+  - component: {fileID: 981064307}
   m_Layer: 5
   m_Name: title
   m_TagString: Untagged
@@ -1456,7 +1458,7 @@ MonoBehaviour:
   m_text: Blaze Man's Dimensional Adventure!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2100000, guid: 79459efec17a4d00a321bdcc27bbc385, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1530,6 +1532,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 981064303}
   m_CullTransparentMesh: 0
+--- !u!114 &981064307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 981064303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 160f0cf8c3c8bbb439e41a61b4c5cbf0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curColorChange: greenUp
+  colorRed: 1
+  colorGreen: 0
+  colorBlue: 0
+  roc: 0.05
 --- !u!1 &1047799182
 GameObject:
   m_ObjectHideFlags: 3
@@ -2122,8 +2141,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1495512383}
-  m_LocalRotation: {x: -0.0016540965, y: 0.97404, z: -0.2263235, w: -0.004592825}
-  m_LocalPosition: {x: 0.40349707, y: 8.17914, z: -26.637733}
+  m_LocalRotation: {x: -0.16986583, y: 0.0022163384, z: -0.0002048015, w: 0.9854647}
+  m_LocalPosition: {x: 0.412, y: 1.1289085, z: -43.56987}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
