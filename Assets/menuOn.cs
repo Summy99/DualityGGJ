@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class menuOn : MonoBehaviour
 {
@@ -10,9 +11,17 @@ public class menuOn : MonoBehaviour
     public GameObject mainmenuCanvas;
     public void menuTurnOn()
     {
-        turnoff.enabled = false;
-        turnon.enabled = true;
-        mainmenuCanvas.SetActive(true);
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            turnoff.enabled = false;
+            turnon.enabled = true;
+            mainmenuCanvas.SetActive(true);
+        }
+        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        {
+            mainmenuCanvas.SetActive(true);
+        }
+
 
        // transform.position = vmCam.position;
        //  transform.rotation = vmCam.rotation;
