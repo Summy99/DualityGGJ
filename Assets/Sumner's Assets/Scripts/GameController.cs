@@ -50,6 +50,8 @@ public class GameController : MonoBehaviour
     {
         cinemachineCam.GetComponent<Camera>().enabled = true;
 
+        Cursor.visible = false;
+
         pl.enabled = false;
         pc.enabled = false;
         if(GameObject.FindGameObjectsWithTag("enemy").Length > 1)
