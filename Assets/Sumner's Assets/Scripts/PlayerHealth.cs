@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     private AudioSource src;
@@ -37,5 +37,6 @@ public class PlayerHealth : MonoBehaviour
         transform.Find("music").gameObject.SetActive(false);
         src.PlayOneShot(death);
         print("you died");
+        SceneManager.LoadScene(2);
     }
 }
