@@ -52,7 +52,8 @@ public class GameController : MonoBehaviour
 
         pl.enabled = false;
         pc.enabled = false;
-        eait.enabled = false;
+        if(GameObject.FindGameObjectsWithTag("enemy").Length > 1)
+            eait.enabled = false;
 
 
 
@@ -75,7 +76,8 @@ public class GameController : MonoBehaviour
 
         pl.enabled = true;
         pc.enabled = true;
-        eait.enabled = true;
+        if (GameObject.FindGameObjectsWithTag("enemy").Length > 1)
+            eait.enabled = true;
 
 
         if (twod)
