@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public GameObject orthoCam;
     private GameObject[] shelves;
     private GameObject[] cubes;
+    private GameObject[] fakewalls;
 
     public RigidbodyFirstPersonController pl;
     public Movement2D twodmove;
@@ -23,6 +24,7 @@ public class GameController : MonoBehaviour
     {
         shelves = GameObject.FindGameObjectsWithTag("shelf");
         cubes = GameObject.FindGameObjectsWithTag("cube");
+        fakewalls = GameObject.FindGameObjectsWithTag("fakewall");
         foreach (GameObject c in cubes)
             c.SetActive(false);
     }
@@ -45,6 +47,8 @@ public class GameController : MonoBehaviour
         {
             twod = false;
             pl.mouseLook.SetCursorLock(true);
+            foreach (GameObject f in fakewalls)
+                f.SetActive(true);
             mf.enabled = false;
             //twodmove.enabled = false;
             fpsCam.GetComponent<Camera>().enabled = true;
@@ -56,6 +60,8 @@ public class GameController : MonoBehaviour
         else
         {
             pl.mouseLook.SetCursorLock(false);
+            foreach (GameObject f in fakewalls)
+                f.SetActive(false);
             twod = true;
             mf.enabled = true;
             //twodmove.enabled = true;

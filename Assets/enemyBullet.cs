@@ -41,7 +41,7 @@ public class enemyBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if(collision.gameObject.CompareTag("obstacle") || collision.gameObject.CompareTag("cube"))
+        if (collision.gameObject.CompareTag("obstacle") || collision.gameObject.CompareTag("cube") || collision.gameObject.CompareTag("fakewall"));
         {
             Destroy(gameObject);
         }
