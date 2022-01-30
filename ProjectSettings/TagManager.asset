@@ -15,6 +15,7 @@ TagManager:
   - HP
   - ammo
   - flyfloors
+  - PlayerCol
   layers:
   - Default
   - TransparentFX

@@ -20,6 +20,9 @@ public class GameController : MonoBehaviour
     public AudioClip twodtothreed;
     public AudioClip threedtotwod;
 
+    private GameObject twodcol;
+    private GameObject threedcol;
+
     public Image threedCrosshair;
     public Image twodCrosshair;
 
@@ -35,6 +38,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        twodcol = pl.transform.Find("twodcol").gameObject;
+        threedcol = pl.transform.Find("threedcol").gameObject;
+        twodcol.SetActive(false);
         eait = new List<EnemyAiTutorial>();
         src = pl.gameObject.GetComponent<AudioSource>();
         shelves = GameObject.FindGameObjectsWithTag("shelf");
@@ -111,6 +117,8 @@ public class GameController : MonoBehaviour
 
         if (twod)
         {
+            threedcol.SetActive(true);
+            twodcol.SetActive(false);
             threedCrosshair.enabled = true;
             twod = false;
             pl.mouseLook.SetCursorLock(true);
@@ -126,6 +134,8 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            twodcol.SetActive(true);
+            threedcol.SetActive(false);
             twodCrosshair.enabled = true;
             twodCrosshair.enabled = true;
             pl.mouseLook.SetCursorLock(false);

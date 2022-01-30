@@ -1677,9 +1677,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 75
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 5
   m_Depth: 0
@@ -1776,8 +1776,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498568487}
-  m_LocalRotation: {x: 0, y: 0.9998676, z: -0, w: -0.016273698}
-  m_LocalPosition: {x: 0.412, y: 1.4890001, z: -39.68}
+  m_LocalRotation: {x: 0.0020686514, y: -0.98976815, z: 0.14230865, w: 0.010150375}
+  m_LocalPosition: {x: 0.5107875, y: 1.9970717, z: -37.591694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3072,7 +3072,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.776852, y: 1}
+    m_SensorSize: {x: 1.7780932, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -6415,7 +6415,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2767535008090559419, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7779948
+      value: 1.7780932
       objectReference: {fileID: 0}
     - target: {fileID: 2990229972790764312, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Layer
@@ -6425,9 +6425,17 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3799738672645929730, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: m_TagString
+      value: PlayerCol
+      objectReference: {fileID: 0}
+    - target: {fileID: 3799738672645929730, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: m_Name
+      value: twodcol
+      objectReference: {fileID: 0}
     - target: {fileID: 3929859389701574822, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7779948
+      value: 1.7780932
       objectReference: {fileID: 0}
     - target: {fileID: 3964370280271790366, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Layer
@@ -6515,7 +6523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5832511751708528651, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Lens.m_SensorSize.x
-      value: 1.7779948
+      value: 1.7780932
       objectReference: {fileID: 0}
     - target: {fileID: 5993642750321007395, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Depth
@@ -6552,6 +6560,10 @@ PrefabInstance:
     - target: {fileID: 7514253503949829280, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7855190113545232965, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: m_Name
+      value: threedcol
       objectReference: {fileID: 0}
     - target: {fileID: 8001480238123383701, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Layer

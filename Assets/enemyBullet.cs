@@ -44,14 +44,17 @@ public class enemyBullet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            collision.gameObject.GetComponent<PlayerHealth>().DamagePlayer(10);
-            Destroy(gameObject);
-        }
-
         if (collision.gameObject.CompareTag("obstacle") || collision.gameObject.CompareTag("cube") || collision.gameObject.CompareTag("fakewall"));
         {
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("PlayerCol"))
+        {
+            other.gameObject.transform.parent.GetComponent<PlayerHealth>().DamagePlayer(10);
             Destroy(gameObject);
         }
     }
