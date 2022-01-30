@@ -14,7 +14,8 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        
+        if (health > maxhealth)
+            health = maxhealth;
     }
 
     public void DamagePlayer(int damage)

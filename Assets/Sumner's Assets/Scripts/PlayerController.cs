@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
 
         if (other.name == "HP")
         {
-            GetComponent<PlayerHealth>().health += 10;
+            GetComponent<PlayerHealth>().health += 50;
             Destroy(other.gameObject);
         }
     }
