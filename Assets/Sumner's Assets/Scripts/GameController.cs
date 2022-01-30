@@ -25,21 +25,25 @@ public class GameController : MonoBehaviour
 
     public RigidbodyFirstPersonController pl;
     public PlayerController pc;
-    public EnemyAiTutorial eait;
 
     public Movement2D twodmove;
     public MouseFollow mf;
+
+    private List<EnemyAiTutorial> eait;
 
     public GameObject cinemachineCam;
     // Start is called before the first frame update
     void Start()
     {
+        eait = new List<EnemyAiTutorial>();
         src = pl.gameObject.GetComponent<AudioSource>();
         shelves = GameObject.FindGameObjectsWithTag("shelf");
         cubes = GameObject.FindGameObjectsWithTag("cube");
         fakewalls = GameObject.FindGameObjectsWithTag("fakewall");
         foreach (GameObject c in cubes)
             c.SetActive(false);
+
+        print(eait.Count);
     }
 
     // Update is called once per frame
@@ -53,14 +57,19 @@ public class GameController : MonoBehaviour
 
     public void johnswitch()
     {
+        eait.Clear();
+        foreach (GameObject e in GameObject.FindGameObjectsWithTag("enemy"))
+        {
+            eait.Add(e.transform.parent.GetComponent<EnemyAiTutorial>());
+        }
+        print(eait.Count);
         cinemachineCam.GetComponent<Camera>().enabled = true;
 
         pl.enabled = false;
         pc.enabled = false;
-        if(GameObject.FindGameObjectsWithTag("enemy").Length > 1)
-            eait.enabled = false;
 
-
+        foreach (EnemyAiTutorial e in eait)
+            e.enabled = false;
 
         if (twod)
         {
@@ -87,12 +96,17 @@ public class GameController : MonoBehaviour
     }
     public void Switch()
     {
+        eait.Clear();
+        foreach (GameObject e in GameObject.FindGameObjectsWithTag("enemy"))
+        {
+            eait.Add(e.transform.parent.GetComponent<EnemyAiTutorial>());
+        }
         cinemachineCam.GetComponent<Camera>().enabled = false;
 
         pl.enabled = true;
         pc.enabled = true;
-        if (GameObject.FindGameObjectsWithTag("enemy").Length > 1)
-            eait.enabled = true;
+        foreach (EnemyAiTutorial e in eait)
+            e.enabled = true;
 
 
         if (twod)
