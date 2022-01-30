@@ -32,15 +32,32 @@ public class Boolet : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        mesh.enabled = false;
-        col.enabled = false;
-        rb.velocity = Vector3.zero;
-        parts.SetActive(false);
-        GameObject burstTemp = Instantiate(burst, transform.position, transform.rotation);
-        Destroy(burstTemp, 1.5f);
-        exists = false;
-        trail.time = 9999;
-        StartCoroutine(FadeTrail());
+        if(collision.gameObject.CompareTag("obstacle") || collision.gameObject.CompareTag("cube") || collision.gameObject.CompareTag("shelf") || collision.gameObject.CompareTag("fakewall"))
+        {
+            mesh.enabled = false;
+            col.enabled = false;
+            rb.velocity = Vector3.zero;
+            parts.SetActive(false);
+            GameObject burstTemp = Instantiate(burst, transform.position, transform.rotation);
+            Destroy(burstTemp, 1.5f);
+            exists = false;
+            trail.time = 9999;
+            StartCoroutine(FadeTrail());
+        }
+
+        if(collision.gameObject.CompareTag("enemy"))
+        {
+            mesh.enabled = false;
+            col.enabled = false;
+            rb.velocity = Vector3.zero;
+            parts.SetActive(false);
+            GameObject burstTemp = Instantiate(burst, transform.position, transform.rotation);
+            Destroy(burstTemp, 1.5f);
+            exists = false;
+            trail.time = 9999;
+            StartCoroutine(FadeTrail());
+            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
+        }
     }
 
     IEnumerator FadeTrail()
