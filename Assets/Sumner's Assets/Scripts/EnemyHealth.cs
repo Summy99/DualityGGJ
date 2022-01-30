@@ -8,10 +8,15 @@ public class EnemyHealth : MonoBehaviour
     public GameObject exp;
     public GameObject[] gibs = new GameObject[9];
 
+    private AudioSource src;
+
+    public AudioClip[] hit;
+    public AudioClip death;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        src = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -24,6 +29,8 @@ public class EnemyHealth : MonoBehaviour
     {
         health -= damage;
 
+        src.PlayOneShot(hit[Random.Range(0, hit.Length - 1)]);
+
         if(health <= 0)
         {
             Die();
@@ -32,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
+        src.PlayOneShot(death);
         int[] gibsToSpawn = new int[5];
 
         for (int i = 0; i < gibsToSpawn.Length; i++)
@@ -44,7 +52,10 @@ public class EnemyHealth : MonoBehaviour
             gib.GetComponent<Rigidbody>().AddForce(new Vector3(Random.Range(0.5f, 3), Random.Range(0.5f, 3), Random.Range(0.5f, 3)), ForceMode.Impulse);
         }
 
+        transform.parent.Find("polySurface1").GetComponent<SkinnedMeshRenderer>().enabled = false;
+        transform.parent.GetComponent<EnemyAiTutorial>().enabled = false;
+
         Instantiate(exp, transform.position, transform.rotation);
-        Destroy(transform.parent.gameObject);
+        Destroy(transform.parent.gameObject, 2f);
     }
 }
