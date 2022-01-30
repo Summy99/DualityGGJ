@@ -853,6 +853,7 @@ GameObject:
   - component: {fileID: 498568490}
   - component: {fileID: 498568489}
   - component: {fileID: 498568488}
+  - component: {fileID: 498568493}
   m_Layer: 0
   m_Name: BRAIN DUDE HAHAHAH FUNNY WORD
   m_TagString: MainCamera
@@ -867,7 +868,7 @@ Camera:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498568487}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_ClearFlags: 1
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
@@ -987,6 +988,78 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &498568493
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 498568487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 5bed23c66ff454f4d829f31b2a2cac13, type: 2}
+    - {fileID: 11400000, guid: 1e22c87599a98384781f19924badf836, type: 2}
+    - {fileID: 11400000, guid: 0a2e974dd57cac248a3a8f745d915826, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 498568488}
+          m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+          m_MethodName: set_enabled
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1287674212}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: Switch
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1287674212}
+          m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+          m_MethodName: johnswitch
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 498568488}
+          m_TargetAssemblyTypeName: UnityEngine.Camera, UnityEngine
+          m_MethodName: set_orthographic
+          m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
 --- !u!1 &574352449
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,6 +4302,7 @@ MonoBehaviour:
   pl: {fileID: 1682048587}
   twodmove: {fileID: 1239218944}
   mf: {fileID: 1239218945}
+  cinemachineCam: {fileID: 498568487}
 --- !u!20 &1326713553 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 399137241192439897, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
@@ -5106,6 +5180,10 @@ PrefabInstance:
     - target: {fileID: 399137241192439897, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_CullingMask.m_Bits
       value: 29239
+      objectReference: {fileID: 0}
+    - target: {fileID: 399137241192439897, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 399137241193554557, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Layer

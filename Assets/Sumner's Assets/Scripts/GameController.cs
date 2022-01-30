@@ -19,6 +19,8 @@ public class GameController : MonoBehaviour
     public RigidbodyFirstPersonController pl;
     public Movement2D twodmove;
     public MouseFollow mf;
+
+    public GameObject cinemachineCam;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,9 +43,26 @@ public class GameController : MonoBehaviour
         healthcount.text = pl.gameObject.GetComponent<PlayerHealth>().health.ToString() + "/" + pl.gameObject.GetComponent<PlayerHealth>().maxhealth.ToString();
     }
 
-    private void Switch()
+    public void johnswitch()
     {
-        if(twod)
+        cinemachineCam.GetComponent<Camera>().enabled = true;
+        if (twod)
+        {
+            //fpsCam.GetComponent<Camera>().enabled = true;
+            //gunCam.GetComponent<Camera>().enabled = true;
+            orthoCam.SetActive(false);
+        }
+        else
+        {
+            fpsCam.GetComponent<Camera>().enabled = false;
+            gunCam.GetComponent<Camera>().enabled = false;
+            //orthoCam.SetActive(true);
+        }
+    }
+    public void Switch()
+    {
+        cinemachineCam.GetComponent<Camera>().enabled = false;
+        if (twod)
         {
             twod = false;
             pl.mouseLook.SetCursorLock(true);
