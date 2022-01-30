@@ -12,6 +12,7 @@ TagManager:
   - shelf
   - obstacle
   - fakewall
+  - HP
   layers:
   - Default
   - TransparentFX
