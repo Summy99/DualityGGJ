@@ -39,4 +39,12 @@ public class PlayerHealth : MonoBehaviour
         print("you died");
         SceneManager.LoadScene(2);
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("winglass"))
+        {
+            SceneManager.LoadScene(3);
+        }
+    }
 }

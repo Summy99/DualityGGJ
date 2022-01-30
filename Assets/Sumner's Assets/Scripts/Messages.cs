@@ -7,8 +7,10 @@ public class Messages : MonoBehaviour
 {
     public TextMeshProUGUI message;
     public bool enemydead = false;
+    public bool tutcol = false;
     private bool twoplayed = false;
     private bool threeplayed = false;
+    private bool fourplayed = false;
 
     void Start()
     {
@@ -23,6 +25,9 @@ public class Messages : MonoBehaviour
 
         if (enemydead && !threeplayed)
             StartCoroutine(TextStageThree());
+
+        if (tutcol && !fourplayed)
+            StartCoroutine(TextStageFour());
     }
 
     IEnumerator TextIntro()
@@ -52,6 +57,20 @@ public class Messages : MonoBehaviour
         message.text = "Nice job. It didn't stand a chance.";
         yield return new WaitForSeconds(3);
         message.text = "You should look around this room for some more ammo for me and fuel for you!";
+        yield return new WaitForSeconds(3);
+        message.text = "";
+    }
+
+    IEnumerator TextStageFour()
+    {
+        fourplayed = true;
+        message.text = "Hey I can see the GOLDEN SHADES just across this gap!";
+        yield return new WaitForSeconds(3);
+        message.text = "But how can you cross it... Oh right!";
+        yield return new WaitForSeconds(3);
+        message.text = "I forgot to mention it, but these walls are covered in fireproof glue!";
+        yield return new WaitForSeconds(3);
+        message.text = "Try jumping into one of the walls, but hold on tight!";
         yield return new WaitForSeconds(3);
         message.text = "";
     }
