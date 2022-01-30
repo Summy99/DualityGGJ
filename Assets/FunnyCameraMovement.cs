@@ -8,6 +8,8 @@ public class FunnyCameraMovement : MonoBehaviour
 {
 
    public PlayableDirector a3Dto2D;
+    public PlayableDirector a2Dto3D;
+    public GameController hahahahhahahah;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +21,15 @@ public class FunnyCameraMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            a3Dto2D.Play();
+            if (hahahahhahahah.twod)
+            {
+                a2Dto3D.Play();
+            }
+            else
+            {
+                a3Dto2D.Play();
+            }
+            
         }
     }
 }
