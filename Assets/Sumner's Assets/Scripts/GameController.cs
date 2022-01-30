@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
 
 public class GameController : MonoBehaviour
@@ -15,6 +16,9 @@ public class GameController : MonoBehaviour
     private GameObject[] shelves;
     private GameObject[] cubes;
     private GameObject[] fakewalls;
+
+    public Image threedCrosshair;
+    public Image twodCrosshair;
 
     public RigidbodyFirstPersonController pl;
     public PlayerController pc;
@@ -37,11 +41,8 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(Input.GetKeyDown(KeyCode.E))
-        //{
-            //Switch();
-        //}
-
+        Cursor.visible = false;
+        twodCrosshair.transform.position = Input.mousePosition;
         ammocount.text = pl.gameObject.GetComponent<PlayerController>().ammo.ToString();
         healthcount.text = pl.gameObject.GetComponent<PlayerHealth>().health.ToString() + "/" + pl.gameObject.GetComponent<PlayerHealth>().maxhealth.ToString();
     }
@@ -49,8 +50,6 @@ public class GameController : MonoBehaviour
     public void johnswitch()
     {
         cinemachineCam.GetComponent<Camera>().enabled = true;
-
-        Cursor.visible = false;
 
         pl.enabled = false;
         pc.enabled = false;
@@ -61,12 +60,14 @@ public class GameController : MonoBehaviour
 
         if (twod)
         {
+            twodCrosshair.enabled = false;
             //fpsCam.GetComponent<Camera>().enabled = true;
             //gunCam.GetComponent<Camera>().enabled = true;
             orthoCam.SetActive(false);
         }
         else
         {
+            threedCrosshair.enabled = false;
             fpsCam.GetComponent<Camera>().enabled = false;
             gunCam.GetComponent<Camera>().enabled = false;
             //orthoCam.SetActive(true);
@@ -84,6 +85,7 @@ public class GameController : MonoBehaviour
 
         if (twod)
         {
+            threedCrosshair.enabled = true;
             twod = false;
             pl.mouseLook.SetCursorLock(true);
             foreach (GameObject f in fakewalls)
@@ -98,6 +100,8 @@ public class GameController : MonoBehaviour
         }
         else
         {
+            twodCrosshair.enabled = true;
+            twodCrosshair.enabled = true;
             pl.mouseLook.SetCursorLock(false);
             foreach (GameObject f in fakewalls)
                 f.SetActive(false);
