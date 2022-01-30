@@ -10,12 +10,15 @@ public class EnemyHealth : MonoBehaviour
 
     private AudioSource src;
 
+    public GameObject gc;
+
     public AudioClip[] hit;
     public AudioClip death;
 
     // Start is called before the first frame update
     void Start()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController");
         src = GetComponent<AudioSource>();
     }
 
@@ -28,7 +31,6 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-
         src.PlayOneShot(hit[Random.Range(0, hit.Length - 1)]);
 
         if(health <= 0)
@@ -39,6 +41,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
+        gc.GetComponent<Messages>().enemydead = true;
         src.PlayOneShot(death);
         int[] gibsToSpawn = new int[5];
 
