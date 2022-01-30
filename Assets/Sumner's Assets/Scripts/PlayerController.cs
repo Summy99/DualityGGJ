@@ -13,12 +13,15 @@ public class PlayerController : MonoBehaviour
     private GameObject cameraRef;
     public GameObject muzzleFlash;
     private GameController gc;
+    private AudioSource src;
+    public AudioClip bang;
 
     private GameObject booletSpawned;
     private GameObject flashTemp;
 
     void Start()
     {
+        src = GetComponent<AudioSource>();
         gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         col = GetComponent<Collider>();
         anim = GetComponent<Animator>();
@@ -31,8 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             Shoot();
         }
-
-        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -52,6 +53,7 @@ public class PlayerController : MonoBehaviour
 
     private void Shoot()
     {
+        src.PlayOneShot(bang);
         if (!gc.twod)
         {
             ammo--;

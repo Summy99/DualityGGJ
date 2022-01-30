@@ -530,7 +530,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771318, y: 1}
+    m_SensorSize: {x: 1.77897, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -863,7 +863,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771318, y: 1}
+    m_SensorSize: {x: 1.77897, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -1077,8 +1077,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 498568487}
-  m_LocalRotation: {x: 0, y: 0.9998676, z: -0, w: -0.016273698}
-  m_LocalPosition: {x: 0.412, y: 1.4890001, z: -39.68}
+  m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: 20.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -3948,7 +3948,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771318, y: 1}
+    m_SensorSize: {x: 1.77897, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4669,7 +4669,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7771318, y: 1}
+    m_SensorSize: {x: 1.77897, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -4780,6 +4780,8 @@ MonoBehaviour:
   fpsCam: {fileID: 1327376779}
   gunCam: {fileID: 1185264582}
   orthoCam: {fileID: 391540650}
+  twodtothreed: {fileID: 8300000, guid: d139799e7a732e943b9bea68326a285a, type: 3}
+  threedtotwod: {fileID: 8300000, guid: 8f431def4240afc4692bb8c50a6be8fb, type: 3}
   threedCrosshair: {fileID: 1343736365}
   twodCrosshair: {fileID: 1328302929}
   pl: {fileID: 1682048587}
@@ -6241,6 +6243,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 2135088939081589571, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2990229972790764312, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: m_Layer
       value: 8
@@ -6313,6 +6319,10 @@ PrefabInstance:
       propertyPath: muzzleFlash
       value: 
       objectReference: {fileID: 1782395880954752, guid: 3dd9cf2e209c504448f1c4c6835675cf, type: 3}
+    - target: {fileID: 5205501137060258471, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
+      propertyPath: bang
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c33016d40b35db40b9ff4d83fdaf914, type: 3}
     - target: {fileID: 5220334631958497153, guid: eed0248b63166e24d9d30fe6ddbe1f89, type: 3}
       propertyPath: cam
       value: 
