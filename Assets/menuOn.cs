@@ -20,7 +20,7 @@ public class menuOn : MonoBehaviour
             turnon.enabled = true;
             mainmenuCanvas.SetActive(true);
         }
-        else if (SceneManager.GetActiveScene().buildIndex == 2)
+        else
         {
             mainmenuCanvas.SetActive(true);
         }
