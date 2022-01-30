@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Sumner's Assets/TitleScreenScene.unity
+    guid: 2f40a984810d9704392a245a4d086a00
+  - enabled: 1
     path: Assets/Sumner's Assets/Sumner's Test.unity
     guid: 3c1f1d0e4b4ac3b4583fc6c031d6075a
   m_configObjects: {}
