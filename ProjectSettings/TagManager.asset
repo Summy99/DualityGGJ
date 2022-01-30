@@ -24,8 +24,8 @@ TagManager:
   - floor
   - player
   - playerForNavmesh
-  - 
-  - 
+  - flyingFloor
+  - noflyzone
   - 
   - 
   - 
