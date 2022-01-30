@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemyBullet : MonoBehaviour
 {
     public GameObject player;
+    private GameController gc;
     public Rigidbody rb;
    // public GameObject devil;
     public float speed = 25f;
@@ -12,14 +13,22 @@ public class enemyBullet : MonoBehaviour
     private void Awake()
     {
        player = GameObject.FindGameObjectWithTag("Player");
-       
+       gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
     }
     // Start is called before the first frame update
     void Start()
     { 
 
         rb = GetComponent<Rigidbody>();
-        transform.LookAt(player.transform);
+        if (!gc.twod)
+            transform.LookAt(player.transform);
+        else
+        {
+            Vector3 target = player.transform.position;
+            Vector3 direction = target - transform.position;
+            float rotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, rotation, 0);
+        }
         //transform.rotation = devil.transform.rotation;
     }
 

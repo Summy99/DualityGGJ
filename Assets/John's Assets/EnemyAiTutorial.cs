@@ -4,6 +4,7 @@ using UnityEngine.AI;
 
 public class EnemyAiTutorial : MonoBehaviour
 {
+    private GameController gc;
     public NavMeshAgent agent;
 
     public Transform player;
@@ -30,6 +31,7 @@ public class EnemyAiTutorial : MonoBehaviour
 
     private void Awake()
     {
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
     }
@@ -80,7 +82,15 @@ public class EnemyAiTutorial : MonoBehaviour
         //Make sure enemy doesn't move
         agent.SetDestination(transform.position);
 
-        transform.LookAt(player);
+        if (!gc.twod)
+            transform.LookAt(player.transform);
+        else
+        {
+            Vector3 target = player.transform.position;
+            Vector3 direction = target - transform.position;
+            float rotation = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;
+            transform.rotation = Quaternion.Euler(0, rotation, 0);
+        }
 
         if (!alreadyAttacked)
         {

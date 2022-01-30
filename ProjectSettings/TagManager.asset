@@ -11,6 +11,7 @@ TagManager:
   - cube
   - shelf
   - obstacle
+  - fakewall
   layers:
   - Default
   - TransparentFX
