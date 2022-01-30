@@ -6,7 +6,7 @@ using UnityStandardAssets.Characters.FirstPerson;
 
 public class menuOn : MonoBehaviour
 {
-    public Transform vmCam;
+    //public Transform vmCam;
     public Camera turnoff;
     public Camera turnon;
     public GameObject mainmenuCanvas;
@@ -15,7 +15,7 @@ public class menuOn : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
 
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        if(SceneManager.GetActiveScene().buildIndex == 0 || SceneManager.GetActiveScene().buildIndex == 3)
         {
             turnoff.enabled = false;
             turnon.enabled = true;
