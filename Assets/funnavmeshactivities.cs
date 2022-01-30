@@ -15,7 +15,7 @@ public class funnavmeshactivities : MonoBehaviour
     {
 
 
-        flyFloor.GetComponent<BoxCollider>().enabled = false;
+        flyFloor.GetComponent<Collider>().enabled = false;
     }
 
     // Update is called once per frame
