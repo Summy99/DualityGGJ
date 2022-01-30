@@ -9,6 +9,7 @@ public class Boolet : MonoBehaviour
     private TrailRenderer trail;
     private MeshRenderer mesh;
     private GameObject parts;
+    public GameObject bloodSplurt;
     public GameObject burst;
     private float speed = 25;
     private bool exists = true;
@@ -44,9 +45,13 @@ public class Boolet : MonoBehaviour
             trail.time = 9999;
             StartCoroutine(FadeTrail());
         }
+    }
 
-        if(collision.gameObject.CompareTag("enemy"))
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("enemy"))
         {
+            print("hi");
             mesh.enabled = false;
             col.enabled = false;
             rb.velocity = Vector3.zero;
@@ -56,7 +61,8 @@ public class Boolet : MonoBehaviour
             exists = false;
             trail.time = 9999;
             StartCoroutine(FadeTrail());
-            collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
+            Instantiate(bloodSplurt, transform.position, transform.rotation);
+            other.gameObject.GetComponent<EnemyHealth>().TakeDamage(1);
         }
     }
 

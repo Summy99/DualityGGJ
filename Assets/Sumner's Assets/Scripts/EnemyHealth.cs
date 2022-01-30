@@ -5,6 +5,8 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour
 {
     public int health = 5;
+    public GameObject exp;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +31,7 @@ public class EnemyHealth : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
+        Instantiate(exp, transform.position, transform.rotation);
+        Destroy(transform.parent.gameObject);
     }
 }
