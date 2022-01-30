@@ -52,6 +52,9 @@ public class PlayerController : MonoBehaviour
             src.PlayOneShot(hpsfx);
             Destroy(other.gameObject);
         }
+
+        if (other.name == "tutcol")
+            gc.gameObject.GetComponent<Messages>().tutcol = true;
     }
 
     private void Shoot()
